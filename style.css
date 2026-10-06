@@ -1,0 +1,920 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Vazirmatn", sans-serif;
+    background: #ffffff;
+    color: #171717;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+    --primary: #2da9e9;
+    --primary-dark: #168fd0;
+    --pink: #f126b5;
+
+    --text: #171717;
+    --muted: #777;
+
+    --border: #e8e8e8;
+    --white: #ffffff;
+    --background: #ffffff;
+
+    --radius: 8px;
+
+    --shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+    width: min(100% - 30px, 820px);
+    margin-inline: auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    height: 35px;
+    background: white;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.header-inner {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Navigation */
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav a {
+    font-size: 11px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.nav a:hover {
+    color: var(--primary);
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.logo span:first-child {
+    font-size: 20px;
+}
+
+
+/* Mobile Menu */
+
+.menu-button {
+    display: none;
+    background: transparent;
+    font-size: 25px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    margin-top: 0;
+    height: 165px;
+
+    display: grid;
+
+    /* عکس بزرگ‌تر، متن کوچک‌تر */
+    grid-template-columns: 1.9fr 1fr;
+
+    direction: ltr;
+
+    background: white;
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Hero Image */
+
+.hero-image {
+    height: 165px;
+    min-height: 165px;
+    overflow: hidden;
+    position: relative;
+}
+.hero-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 100%;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.95),
+        white
+    );
+
+    pointer-events: none;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Hero Content */
+
+.hero-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 20px;
+
+    text-align: right;
+
+    direction: rtl;
+}
+
+.hero-content h1 {
+    font-size: 21px;
+
+    font-weight: 800;
+
+    line-height: 1.5;
+
+    margin-bottom: 4px;
+}
+
+.hero-content p {
+    font-size: 11px;
+
+    color: #333;
+
+    margin-bottom: 12px;
+}
+
+
+/* Hero Button */
+
+.primary-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+
+    color: white;
+
+    padding: 7px 18px;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.primary-button:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   FACILITIES
+===================================================== */
+
+.facilities-section {
+    margin-top: 12px;
+}
+
+.facilities-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.facility-card {
+    min-height: 70px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+}
+
+
+/* Facility Icon */
+
+.facility-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    font-size: 18px;
+}
+
+.facility-icon.pink {
+    background: #fff0fa;
+}
+
+.facility-icon.blue {
+    background: #edf8ff;
+}
+
+.facility-icon.purple {
+    background: #f4efff;
+}
+
+.facility-icon.cyan {
+    background: #eafaff;
+}
+
+
+/* Facility Text */
+
+.facility-card h3 {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 2px;
+}
+
+.facility-card p {
+    font-size: 8px;
+
+    color: var(--muted);
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title {
+    text-align: center;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+}
+
+
+/* =====================================================
+   TICKETS
+===================================================== */
+
+.tickets-section {
+    margin-top: 12px;
+}
+
+.ticket-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.ticket-card {
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    border: 1px solid #e5e5e5;
+}
+
+
+/* Men */
+
+.men-card {
+    background: #f0f8ff;
+}
+
+
+/* Women */
+
+.women-card {
+    background: #fff1f9;
+}
+
+
+/* Ticket Text */
+
+.ticket-card h3 {
+    font-size: 14px;
+
+    font-weight: 800;
+
+    margin-bottom: 3px;
+}
+
+.ticket-card p {
+    font-size: 9px;
+
+    line-height: 1.7;
+}
+
+
+/* Ticket Button */
+
+.ticket-button {
+    width: 100%;
+
+    margin-top: 5px;
+
+    height: 25px;
+
+    color: white;
+
+    border-radius: 6px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+
+/* Blue Button */
+
+.blue-button {
+    background: var(--primary);
+}
+
+.blue-button:hover {
+    background: var(--primary-dark);
+}
+
+
+/* Pink Button */
+
+.pink-button {
+    background: var(--pink);
+}
+
+.pink-button:hover {
+    background: #d91aa1;
+}
+
+
+/* =====================================================
+   RULES
+===================================================== */
+
+.rules-section {
+    margin-top: 10px;
+
+    padding: 7px 18px 10px;
+
+    background: white;
+
+    border: 1px solid #e8e8e8;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+}
+
+.rules-section h2 {
+    text-align: center;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+.rules-list {
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 1px;
+}
+
+.rules-list li {
+    font-size: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.check {
+    width: 14px;
+    height: 14px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #55a9ce;
+
+    color: #2497c7;
+
+    border-radius: 50%;
+
+    font-size: 9px;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   CONTACT SECTION
+===================================================== */
+
+.contact-section {
+    margin-top: 10px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.25fr;
+
+    gap: 12px;
+}
+
+
+/* =====================================================
+   CONTACT CARD
+===================================================== */
+
+.contact-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    padding: 10px 14px;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+}
+
+.contact-card h2 {
+    font-size: 16px;
+
+    margin-bottom: 7px;
+}
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 5px;
+}
+
+.contact-icon {
+    color: var(--primary);
+
+    font-size: 14px;
+}
+
+.contact-item strong {
+    display: block;
+
+    font-size: 9px;
+}
+
+.contact-item p {
+    font-size: 8px;
+
+    color: #555;
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.video-card {
+    height: 126px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+}
+
+.video-card img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.video-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.08);
+}
+
+
+/* Play Button */
+
+.play-button {
+    position: absolute;
+
+    z-index: 2;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 16px;
+
+    padding-left: 3px;
+
+    transition: 0.2s;
+}
+
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+
+    background: var(--primary-dark);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    margin-top: 10px;
+
+    background: white;
+
+    border-top: 1px solid #eeeeee;
+}
+
+.footer-inner {
+    min-height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.footer p {
+    font-size: 8px;
+
+    color: #777;
+}
+
+.socials {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.socials a {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #444;
+
+    transition: 0.2s;
+}
+
+.socials a:hover {
+    color: var(--primary);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .nav {
+        gap: 18px;
+    }
+
+    .nav a {
+        font-size: 10px;
+    }
+
+    .hero-content {
+        padding: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 19px;
+    }
+
+    .facilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: min(100% - 20px, 820px);
+    }
+
+
+    /* Header */
+
+    .header {
+        height: 45px;
+    }
+
+
+    .nav {
+        display: none;
+
+        position: absolute;
+
+        top: 45px;
+
+        right: 0;
+        left: 0;
+
+        background: white;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 8px 20px;
+
+        border-bottom: 1px solid var(--border);
+
+        box-shadow: var(--shadow);
+
+        z-index: 20;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        padding: 10px 0;
+
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .logo {
+        font-size: 13px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        height: auto;
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        height: 180px;
+
+        min-height: 180px;
+    }
+
+    .hero-content {
+        padding: 22px 18px;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 21px;
+    }
+
+    .hero-content p {
+        font-size: 11px;
+    }
+
+
+    /* Facilities */
+
+    .facilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+    .facility-card {
+        padding: 9px;
+    }
+
+    .facility-card h3 {
+        font-size: 11px;
+    }
+
+    .facility-card p {
+        font-size: 8px;
+    }
+
+    .facility-icon {
+        width: 30px;
+        height: 30px;
+
+        font-size: 16px;
+    }
+
+
+    /* Tickets */
+
+    .ticket-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Contact */
+
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .video-card {
+        height: 200px;
+    }
+
+
+    /* Footer */
+
+    .footer-inner {
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 5px;
+
+        padding: 8px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .facilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 19px;
+    }
+
+    .section-title {
+        font-size: 16px;
+    }
+}
