@@ -1,7 +1,3 @@
-/* =====================================================
-   RESET
-===================================================== */
-
 * {
     margin: 0;
     padding: 0;
@@ -39,11 +35,6 @@ button {
     cursor: pointer;
 }
 
-
-/* =====================================================
-   VARIABLES
-===================================================== */
-
 :root {
     --primary: #2da9e9;
     --primary-dark: #168fd0;
@@ -61,37 +52,27 @@ button {
     --shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
 }
 
-
-/* =====================================================
-   CONTAINER
-===================================================== */
-
 .container {
     width: min(100% - 30px, 820px);
     margin-inline: auto;
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
-
 .header {
-    height: 35px;
+    height: 70px;
     background: white;
     border-bottom: 1px solid #eeeeee;
 }
 
 .header-inner {
     height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
-
-/* Navigation */
 
 .nav {
     display: flex;
@@ -100,17 +81,16 @@ button {
 }
 
 .nav a {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 500;
-    transition: 0.2s;
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 .nav a:hover {
     color: var(--primary);
 }
-
-
-/* Logo */
 
 .logo {
     display: flex;
@@ -126,19 +106,11 @@ button {
     font-size: 20px;
 }
 
-
-/* Mobile Menu */
-
 .menu-button {
     display: none;
     background: transparent;
     font-size: 25px;
 }
-
-
-/* =====================================================
-   HERO
-===================================================== */
 
 .hero {
     margin-top: 0;
@@ -146,7 +118,6 @@ button {
 
     display: grid;
 
-    /* عکس بزرگ‌تر، متن کوچک‌تر */
     grid-template-columns: 1.9fr 1fr;
 
     direction: ltr;
@@ -158,9 +129,6 @@ button {
 
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
 }
-
-
-/* Hero Image */
 
 .hero-image {
     height: 165px;
@@ -191,9 +159,6 @@ button {
     height: 100%;
     object-fit: cover;
 }
-
-
-/* Hero Content */
 
 .hero-content {
     display: flex;
@@ -229,9 +194,6 @@ button {
     margin-bottom: 12px;
 }
 
-
-/* Hero Button */
-
 .primary-button {
     display: inline-flex;
 
@@ -258,11 +220,6 @@ button {
 
     transform: translateY(-1px);
 }
-
-
-/* =====================================================
-   FACILITIES
-===================================================== */
 
 .facilities-section {
     margin-top: 12px;
@@ -296,9 +253,6 @@ button {
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
 }
 
-
-/* Facility Icon */
-
 .facility-icon {
     width: 34px;
     height: 34px;
@@ -331,9 +285,6 @@ button {
     background: #eafaff;
 }
 
-
-/* Facility Text */
-
 .facility-card h3 {
     font-size: 12px;
 
@@ -349,10 +300,6 @@ button {
 }
 
 
-/* =====================================================
-   SECTION TITLE
-===================================================== */
-
 .section-title {
     text-align: center;
 
@@ -362,11 +309,6 @@ button {
 
     margin-bottom: 8px;
 }
-
-
-/* =====================================================
-   TICKETS
-===================================================== */
 
 .tickets-section {
     margin-top: 12px;
@@ -390,22 +332,13 @@ button {
     border: 1px solid #e5e5e5;
 }
 
-
-/* Men */
-
 .men-card {
     background: #f0f8ff;
 }
 
-
-/* Women */
-
 .women-card {
     background: #fff1f9;
 }
-
-
-/* Ticket Text */
 
 .ticket-card h3 {
     font-size: 14px;
@@ -421,8 +354,6 @@ button {
     line-height: 1.7;
 }
 
-
-/* Ticket Button */
 
 .ticket-button {
     width: 100%;
@@ -443,8 +374,6 @@ button {
 }
 
 
-/* Blue Button */
-
 .blue-button {
     background: var(--primary);
 }
@@ -452,9 +381,6 @@ button {
 .blue-button:hover {
     background: var(--primary-dark);
 }
-
-
-/* Pink Button */
 
 .pink-button {
     background: var(--pink);
@@ -464,10 +390,6 @@ button {
     background: #d91aa1;
 }
 
-
-/* =====================================================
-   RULES
-===================================================== */
 
 .rules-section {
     margin-top: 10px;
@@ -531,11 +453,6 @@ button {
     flex-shrink: 0;
 }
 
-
-/* =====================================================
-   CONTACT SECTION
-===================================================== */
-
 .contact-section {
     margin-top: 10px;
 
@@ -545,11 +462,6 @@ button {
 
     gap: 12px;
 }
-
-
-/* =====================================================
-   CONTACT CARD
-===================================================== */
 
 .contact-card {
     background: white;
@@ -597,11 +509,6 @@ button {
     color: #555;
 }
 
-
-/* =====================================================
-   VIDEO
-===================================================== */
-
 .video-card {
     height: 126px;
 
@@ -629,9 +536,6 @@ button {
 
     background: rgba(0, 0, 0, 0.08);
 }
-
-
-/* Play Button */
 
 .play-button {
     position: absolute;
@@ -664,11 +568,6 @@ button {
 
     background: var(--primary-dark);
 }
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
 
 .footer {
     margin-top: 10px;
@@ -716,11 +615,6 @@ button {
     color: var(--primary);
 }
 
-
-/* =====================================================
-   TABLET
-===================================================== */
-
 @media (max-width: 800px) {
 
     .nav {
@@ -744,19 +638,11 @@ button {
     }
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
 @media (max-width: 600px) {
 
     .container {
         width: min(100% - 20px, 820px);
     }
-
-
-    /* Header */
 
     .header {
         height: 45px;
@@ -809,8 +695,6 @@ button {
     }
 
 
-    /* Hero */
-
     .hero {
         height: auto;
 
@@ -840,8 +724,6 @@ button {
     }
 
 
-    /* Facilities */
-
     .facilities-grid {
         grid-template-columns: repeat(2, 1fr);
 
@@ -867,15 +749,10 @@ button {
         font-size: 16px;
     }
 
-
-    /* Tickets */
-
     .ticket-grid {
         grid-template-columns: 1fr;
     }
 
-
-    /* Contact */
 
     .contact-section {
         grid-template-columns: 1fr;
@@ -885,8 +762,6 @@ button {
         height: 200px;
     }
 
-
-    /* Footer */
 
     .footer-inner {
         flex-direction: column;
@@ -898,11 +773,6 @@ button {
         padding: 8px;
     }
 }
-
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
 
 @media (max-width: 380px) {
 
@@ -918,3 +788,52 @@ button {
         font-size: 16px;
     }
 }
+.phone-link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.phone-link:hover {
+    color: var(--primary);
+}
+
+.phone-link,
+.contact-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.phone-link {
+    direction: ltr;
+    display: inline-block;
+}
+
+.phone-link:hover,
+.contact-link:hover {
+    color: var(--primary);
+}
+
+.map-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    min-height: 260px;
+}
+
+.map-card iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    border: 0;
+}
+
+@media (max-width: 600px) {
+    .map-card,
+    .map-card iframe {
+        min-height: 280px;
+    }
+}
+
