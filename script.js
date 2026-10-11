@@ -50,15 +50,37 @@ ticketButtons.forEach(function (button) {
 });
 
 
-// =====================================================
-// VIDEO BUTTON
-// =====================================================
 
-const playButton = document.querySelector("#play-button");
+document.querySelectorAll(".video-card video").forEach((video) => {
+    const card = video.closest(".video-card");
 
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
 
-playButton.addEventListener("click", function () {
+    // کامپیوتر: با ورود ماوس پخش شود
+    card.addEventListener("mouseenter", () => {
+        video.play().catch(console.error);
+    });
 
-    alert("ویدئوی استخر در این قسمت پخش می‌شود.");
+    // با خروج ماوس متوقف شود
+    card.addEventListener("mouseleave", () => {
+        video.pause();
+    });
 
+    // گوشی: با دیده شدن ویدئو پخش شود
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                video.play().catch(console.error);
+            } else {
+                video.pause();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(video);
 });
+
+
+

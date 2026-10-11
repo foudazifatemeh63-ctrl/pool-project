@@ -473,12 +473,41 @@ button {
     padding: 10px 14px;
 
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    column-gap: 10px;
 }
 
 .contact-card h2 {
+    grid-column: 1 / -1;
     font-size: 16px;
-
     margin-bottom: 7px;
+}
+
+.contact-info {
+    grid-column: 1;
+    min-width: 0;
+}
+
+.contact-map {
+    grid-column: 2;
+    width: 100%;
+    height: 96px;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #2da9e9;
+}
+
+.contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 96px;
+    border: 0;
 }
 
 .contact-item {
@@ -759,6 +788,18 @@ button {
         grid-template-columns: 1fr;
     }
 
+    .contact-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-map {
+        height: 110px;
+    }
+
+    .contact-map iframe {
+        min-height: 110px;
+    }
+
     .video-card {
         height: 200px;
     }
@@ -837,4 +878,104 @@ button {
         min-height: 280px;
     }
 }
+
+/* چیدمان متن و نقشه داخل کارت تماس */
+.contact-card-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 105px;
+    gap: 10px;
+    align-items: start;
+    direction: rtl;
+}
+
+.contact-info {
+    min-width: 0;
+}
+
+.contact-map {
+    width: 500px;
+    height: 200px;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    min-height: 0;
+}
+
+.contact-card .contact-item {
+    align-items: flex-start;
+}
+
+.contact-card .contact-item p {
+    overflow-wrap: anywhere;
+}
+
+/* تنظیم اندازه در صفحه‌های کوچک */
+@media (max-width: 600px) {
+    .contact-card-content {
+        grid-template-columns: minmax(0, 1fr) 95px;
+        gap: 8px;
+    }
+
+    .contact-map {
+        width: 95px;
+        height: 120px;
+    }
+}
+.video-card {
+    width: 820px;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+    background: #eaeaea;
+ 
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+}
+
+.video-card video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-card {
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.video-card video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* بزرگ شدن هنگام رفتن ماوس روی ویدئو */
+@media (hover: hover) and (pointer: fine) {
+    .video-card:hover {
+        transform: scale(1.06);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        z-index: 5;
+    }
+}
+
+
+
+
+
+
+
 
