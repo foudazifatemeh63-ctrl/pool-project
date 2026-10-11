@@ -527,7 +527,7 @@ button {
     object-fit: cover;
 }
 
-.video-card::after {
+.video-card:not(.map-card)::after {
     content: "";
 
     position: absolute;
@@ -535,6 +535,7 @@ button {
     inset: 0;
 
     background: rgba(0, 0, 0, 0.08);
+    pointer-events: none;
 }
 
 .play-button {
